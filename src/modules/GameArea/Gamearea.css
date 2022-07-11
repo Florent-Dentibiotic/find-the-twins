@@ -1,0 +1,20 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1em;
+}
+
+.board-case {
+  margin: auto;
+  height: 100%;
+  width: 10em;
+  display: grid;
+  place-content: center;
+}
+
+.board-case-content {
+  height: 5em;
+  width: 5em;
+  background-color: aqua;
+  text-align: center;
+}
