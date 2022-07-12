@@ -10,11 +10,18 @@
   width: 10em;
   display: grid;
   place-content: center;
+  overflow: hidden;
 }
 
 .board-case-content {
-  height: 5em;
-  width: 5em;
-  background-color: aqua;
+  height: auto;
+  width: 100%;
+  background-color: greenyellow;
   text-align: center;
+  object-fit: cover;
+}
+
+.board-case-image {
+  max-width: 8em;
+  object-fit: cover;
 }
