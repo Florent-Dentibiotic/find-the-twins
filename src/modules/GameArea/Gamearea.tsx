@@ -1,6 +1,6 @@
+import './GameArea.css'
 import { useEffect, useState } from 'react'
 import Card from './components/Card'
-import './GameArea.css'
 
 interface initialVisibilityProps {
   [key: string]: boolean
@@ -15,12 +15,12 @@ const animals = [
   'animals-2.jpeg',
   'animals-4.jpeg',
   'animals-5.jpeg',
-  'animals-6.jpeg',
-  'animals-7.jpeg',
-  'animals-8.jpeg',
-  'animals-9.jpeg',
-  'animals-10.jpeg',
-  'animals-11.jpeg',
+  // 'animals-6.jpeg',
+  // 'animals-7.jpeg',
+  // 'animals-8.jpeg',
+  // 'animals-9.jpeg',
+  // 'animals-10.jpeg',
+  // 'animals-11.jpeg',
 ]
 
 let initialVisibility: initialVisibilityProps = {}
@@ -117,9 +117,9 @@ export default function Gamearea() {
   }
 
   return (
-    <main>
-      <h1>Memory</h1>
-      <section>
+    <main className="main-board">
+      <h1 className="header">Memory</h1>
+      <section className="players">
         {Object.values(players).map((player, id) => (
           <div key={'test-' + id}>
             {player.name} : {player.score}

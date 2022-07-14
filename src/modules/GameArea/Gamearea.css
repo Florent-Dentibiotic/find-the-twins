@@ -1,0 +1,46 @@
+.header {
+  text-align: center;
+}
+
+.players {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.board {
+  display: flex;
+  gap: 1em;
+  padding: 1em;
+  flex-wrap: wrap;
+}
+
+.board-case {
+  margin: auto;
+  width: 9em;
+  height: 9em;
+  padding: 0.6em;
+  display: grid;
+  place-content: center;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.board-case-content {
+  display: grid;
+  box-sizing: content-box;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  object-fit: cover;
+}
+
+.board-case-image {
+  max-width: 100%;
+  object-fit: cover;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
