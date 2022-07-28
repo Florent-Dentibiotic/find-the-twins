@@ -1,9 +1,16 @@
+.header-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  align-items: center;
+}
+
 .header {
   text-align: center;
 }
 
 .players {
-  width: 100%;
+  width: 30em;
   margin: auto;
   display: flex;
   justify-content: space-between;

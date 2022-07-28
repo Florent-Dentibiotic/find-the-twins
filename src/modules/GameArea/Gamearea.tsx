@@ -1,6 +1,7 @@
-import './GameArea.css'
+import './Gamearea.css'
 import { useEffect, useState } from 'react'
 import Card from './components/Card'
+import { Link } from 'react-router-dom'
 
 interface initialVisibilityProps {
   [key: string]: boolean
@@ -15,8 +16,8 @@ const animals = [
   'animals-2.jpeg',
   'animals-4.jpeg',
   'animals-5.jpeg',
-  // 'animals-6.jpeg',
-  // 'animals-7.jpeg',
+  'animals-6.jpeg',
+  'animals-7.jpeg',
   // 'animals-8.jpeg',
   // 'animals-9.jpeg',
   // 'animals-10.jpeg',
@@ -29,33 +30,32 @@ allAnimals.forEach((animal, id) => (initialVisibility[animal + id] = false))
 
 const initialPlayers: initialPlayersProps = {
   player1: {
-    name: 'Joueur 1',
+    name: 'Alice',
     score: 0,
     set: 0,
     actif: false,
   },
   player2: {
-    name: 'Joueur 2',
+    name: 'Florent',
     score: 0,
     set: 0,
     actif: false,
   },
   player3: {
-    name: 'Joueur 3',
+    name: 'Éléonore',
     score: 0,
     set: 0,
     actif: false,
   },
-  player4: {
-    name: 'Joueur 4',
-    score: 0,
-    set: 0,
-    actif: false,
-  },
+  // player4: {
+  //   name: 'Joueur 4',
+  //   score: 0,
+  //   set: 0,
+  //   actif: false,
+  // },
 }
 
-export default function Gamearea() {
-  const [players, setPlayers] = useState(initialPlayers)
+export default function Gamearea({ players, setPlayers }: GameareaProps) {
   const [activePlayer, setActivePlayer] = useState(Object.keys(initialPlayers)[0])
   const [cards, setCards] = useState(allAnimals)
   const [counter, setCounter] = useState(0)
@@ -97,7 +97,7 @@ export default function Gamearea() {
     if (counter !== 1 && twins.length && twins.length === 2) {
       const activePlayerIndex = Object.keys(initialPlayers).indexOf(activePlayer)
       setActivePlayer(
-        activePlayerIndex === 3
+        activePlayerIndex === Object.keys(initialPlayers).length - 1
           ? Object.keys(initialPlayers)[0]
           : Object.keys(initialPlayers)[activePlayerIndex + 1]
       )
@@ -118,7 +118,11 @@ export default function Gamearea() {
 
   return (
     <main className="main-board">
-      <h1 className="header">Memory</h1>
+      <section className="header-nav">
+        <h1 className="header">Memory</h1>
+        <Link to={'/config'}>Configuration</Link>
+      </section>
+
       <section className="players">
         {Object.values(players).map((player, id) => (
           <div key={'test-' + id}>
